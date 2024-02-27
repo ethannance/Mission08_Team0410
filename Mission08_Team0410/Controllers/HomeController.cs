@@ -6,6 +6,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Mission08_Team0410.Controllers
 {
+    private TasksContext _context;
     public class HomeController : Controller
     {
         public IActionResult Index()
