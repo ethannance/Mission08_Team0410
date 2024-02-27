@@ -6,9 +6,14 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Mission08_Team0410.Controllers
 {
-    private TasksContext _context;
     public class HomeController : Controller
     {
+        private TasksContext _context;
+
+        public HomeController(TasksContext temp) //Constructor
+        {
+            _context = temp;
+        }
         public IActionResult Index()
         {
             return View();
