@@ -1,10 +1,12 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media (min-width: 768px) {
   html {
     font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 }
 
@@ -24,4 +26,13 @@ body {
 .navbar {
     background: lavender;
     color: black;
+}
+
+.title {
+    color: black;
+    margin-bottom: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+    background: lightsteelblue;
 }
