@@ -27,9 +27,9 @@ namespace Mission08_Team0410.Controllers
                 .ToList();
 
             //Linq
-            var applications = _context.Tasks.Include("Category")
+            var applications = _context.AddTask.Include("Category")
                 .Where(x => x.Completed == true)
-                .OrderBy(x => x.MovieId).ToList();
+                .OrderBy(x => x.TaskId).ToList();
 
             return View(applications);
         }
@@ -69,8 +69,8 @@ namespace Mission08_Team0410.Controllers
         [HttpGet]
         public IActionResult Edit(int id) //Edits selected record
         {
-            var recordToEdit = _context.Movies
-                .Single(x => x.MovieId == id);
+            var recordToEdit = _context.AddTask
+                .Single(x => x.TaskId == id);
 
             ViewBag.Categories = _context.Categories
                 .OrderBy(x => x.Category)
@@ -80,7 +80,7 @@ namespace Mission08_Team0410.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Application updatedInfo)
+        public IActionResult Edit(AddTask updatedInfo)
         {
             if (ModelState.IsValid) // Check if the model state is valid
             {
@@ -102,17 +102,17 @@ namespace Mission08_Team0410.Controllers
         [HttpGet]
         public IActionResult Delete(int id) //Deletes selected record
         {
-            var recordToDelete = _context.Movies
-                .Single(x => x.MovieId == id);
+            var recordToDelete = _context.AddTask
+                .Single(x => x.TaskId == id);
 
             return View(recordToDelete);
         }
 
         [HttpPost]
 
-        public IActionResult Delete(Application application)
+        public IActionResult Delete(AddTask application)
         {
-            _context.Movies.Remove(application);
+            _context.AddTask.Remove(application);
             _context.SaveChanges();
 
             return RedirectToAction("ViewTasks");
