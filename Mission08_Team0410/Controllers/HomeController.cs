@@ -29,7 +29,7 @@ namespace Mission08_Team0410.Controllers
             //Linq
             var applications = _context.Tasks.Include("Category")
                 .Where(x => x.Completed == true)
-                .OrderBy(x => x.MovieId).ToList();
+                .OrderBy(x => x.TaskId).ToList();
 
             return View(applications);
         }
@@ -70,7 +70,7 @@ namespace Mission08_Team0410.Controllers
         public IActionResult Edit(int id) //Edits selected record
         {
             var recordToEdit = _context.Movies
-                .Single(x => x.MovieId == id);
+                .Single(x => x.TaskId == id);
 
             ViewBag.Categories = _context.Categories
                 .OrderBy(x => x.Category)
@@ -103,7 +103,7 @@ namespace Mission08_Team0410.Controllers
         public IActionResult Delete(int id) //Deletes selected record
         {
             var recordToDelete = _context.Movies
-                .Single(x => x.MovieId == id);
+                .Single(x => x.TaskId == id);
 
             return View(recordToDelete);
         }
