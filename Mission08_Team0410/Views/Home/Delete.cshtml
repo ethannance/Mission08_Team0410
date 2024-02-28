@@ -3,3 +3,17 @@
 *@
 @{
 }
+@model AddTask
+
+<div class="container">
+    <div class="row">
+        <div class="col-12"><h4>Please confirm that you want to delete Model.TaskName, Model.CategoryName from the task list.</h4></div>
+    </div>
+    <div class="row">
+        <form asp-controller="Home" asp-action="Delete" method="post">
+            <input type="hidden" asp-for="TaskId" />
+            <div class="col-3"><a class="btn btn-info" asp-controller="Home" asp-action="ViewTasks">Cancel</a></div>
+            <div class="col-9"><button type="submit" class="btn btn-danger">Delete</button></div>
+        </form>
+    </div>
+</div>
