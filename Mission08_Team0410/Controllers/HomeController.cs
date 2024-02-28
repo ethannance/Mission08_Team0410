@@ -27,8 +27,8 @@ namespace Mission08_Team0410.Controllers
                 .ToList();
 
             //Linq
-            var applications = _context.Movies.Include("Category")
-                .Where(x => x.Title != null)
+            var applications = _context.Tasks.Include("Category")
+                .Where(x => x.Completed == true)
                 .OrderBy(x => x.MovieId).ToList();
 
             return View(applications);
@@ -40,16 +40,17 @@ namespace Mission08_Team0410.Controllers
             ViewBag.Categories = _context.Categories
                 .OrderBy(x => x.Category)
                 .ToList();
-            return View("AddMovie", new Application()); //create new application to get rid of the error that says " is not a valid input
+
+            return View("AddTask", new AddTask()); //create new application to get rid of the error that says " is not a valid input
 
         }
         [HttpPost]
-        public IActionResult AddTask(Application response)
+        public IActionResult AddTask(AddTask response)
         {
             //Checks to see if the infor is valid based on the model before updating the data
             if (ModelState.IsValid)
             {
-                _context.Movies.Add(response); //Add record to database
+                _context.Tasks.Add(response); //Add record to database
                 _context.SaveChanges();
 
                 return View("Confirmation", response);
@@ -63,12 +64,6 @@ namespace Mission08_Team0410.Controllers
 
                 return View(response);
             }
-        }
-        
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         
         [HttpGet]
