@@ -3,3 +3,42 @@
 *@
 @{
 }
+
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="title col-12">Add a Task</div>
+        </div>
+        <div class="row">
+            <div class="col-6"><label asp-for="TaskName">Name of Task: </label></div>
+            <div class="col-6"><input asp-for="TaskName"/></div>
+        </div>
+        <div class="row">
+            <div class="col-6"><label asp-for="DueDate">When is the task due?</label></div>
+            <div class="col-6"><input asp-for="DueDate" placeholder="MM/DD/YYYY" /></div>
+        </div>
+        <div class="row">
+            <div class="col-6"><label asp-for="Quadrant">In which Quadrant does this task belong?</label></div>
+            <div class="col-6"><input asp-for="Quadrant" /></div>
+        </div>
+        <div class="row">
+            <div class="col-6"><label asp-for="CategoryId">What type of task is this?</label></div>
+            <div class="col-6">
+                <select asp-for="CategoryId">
+                    <option value="">Choose a type</option>
+                    @foreach (Category m in ViewBag.Categories)
+                    {
+                        <option value="@m.CategoryId">@m.CategoryName</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6"><label asp-for="Completed">Is the task completed?</label></div>
+            <div class="col-6"><select asp-for="Completed">
+                                <option value="false">No</option>
+                                <option value="true">Yes</option>
+            </select></div>
+        </div>
+    </form>
+</div>
