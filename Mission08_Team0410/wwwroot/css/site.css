@@ -22,3 +22,17 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.navbar {
+    background: lavender;
+    color: black;
+}
+
+.title {
+    color: black;
+    margin-bottom: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+    background: lightsteelblue;
+}
