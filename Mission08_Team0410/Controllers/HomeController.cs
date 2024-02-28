@@ -112,7 +112,7 @@ namespace Mission08_Team0410.Controllers
 
         public IActionResult Delete(AddTask application)
         {
-            _context.Movies.Remove(application);
+            _context.AddTask.Remove(application);
             _context.SaveChanges();
 
             return RedirectToAction("ViewTasks");
