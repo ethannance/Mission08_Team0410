@@ -24,7 +24,7 @@ namespace Mission08_Team0410.Controllers
         {
 
             ViewBag.Categories = _context.Categories
-                .OrderBy(x => x.Category)
+                .OrderBy(x => x.CategoryName)
                 .ToList();
 
             //Linq
@@ -39,7 +39,7 @@ namespace Mission08_Team0410.Controllers
         public IActionResult AddTask()
         {
             ViewBag.Categories = _context.Categories
-                .OrderBy(x => x.Category)
+                .OrderBy(x => x.CategoryId)
                 .ToList();
 
             return View("AddTask", new AddTask()); //create new application to get rid of the error that says " is not a valid input
@@ -60,7 +60,7 @@ namespace Mission08_Team0410.Controllers
             {
 
                 ViewBag.Categories = _context.Categories
-                .OrderBy(x => x.Category)
+                .OrderBy(x => x.CategoryName)
                 .ToList();
 
                 return View(response);
@@ -74,7 +74,7 @@ namespace Mission08_Team0410.Controllers
                 .Single(x => x.TaskId == id);
 
             ViewBag.Categories = _context.Categories
-                .OrderBy(x => x.Category)
+                .OrderBy(x => x.CategoryName)
                 .ToList();
 
             return View("AddTask", recordToEdit);
@@ -93,7 +93,7 @@ namespace Mission08_Team0410.Controllers
             else // Model state is not valid, return to the view with the current information
             {
                 ViewBag.Categories = _context.Categories
-                    .OrderBy(x => x.Category)
+                    .OrderBy(x => x.CategoryName)
                     .ToList();
 
                 return View("AddTask", updatedInfo); // Use the same AddMovie view for editing, ensuring validation messages are displayed

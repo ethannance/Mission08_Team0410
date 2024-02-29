@@ -17,7 +17,7 @@ namespace Mission08_Team0411.Models
                 new Categories { CategoryId = 1, CategoryName = "Home" },
                 new Categories { CategoryId = 2, CategoryName = "School" },
                 new Categories { CategoryId = 3, CategoryName = "Work" },
-                new Categories { CategoryId = 4, CategoryName = "Church" },
+                new Categories { CategoryId = 4, CategoryName = "Church" }
                 );
         }
     }
