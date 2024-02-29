@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Mission08_Team0410.Models
+namespace Mission08_Team0411.Models
 {
     public class AddTask
     {

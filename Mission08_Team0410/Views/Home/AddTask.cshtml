@@ -30,7 +30,7 @@
             <div class="col-6">
                 <select asp-for="CategoryId">
                     <option value="">Choose a type</option>
-                    @foreach (Category m in ViewBag.Categories)
+                    @foreach (Categories m in ViewBag.Categories)
                     {
                         <option value="@m.CategoryId">@m.CategoryName</option>
                     }
