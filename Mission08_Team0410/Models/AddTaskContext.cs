@@ -8,7 +8,7 @@ namespace Mission08_Team0411.Models
         {
         }
 
-        public DbSet<Task> AddTask { get; set; } // this DBSET creates the AddTask table
+        public DbSet<AddTask> AddTask { get; set; } // this DBSET creates the AddTask table
         public DbSet<Categories> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
