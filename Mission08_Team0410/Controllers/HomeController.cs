@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Mission08_Team0410.Models;
 using Mission08_Team0411.Models;
 using System.Diagnostics;
 using static System.Net.Mime.MediaTypeNames;
@@ -51,7 +50,7 @@ namespace Mission08_Team0410.Controllers
             //Checks to see if the infor is valid based on the model before updating the data
             if (ModelState.IsValid)
             {
-                _context.Tasks.Add(response); //Add record to database
+                _context.AddTask.Add(response); //Add record to database
                 _context.SaveChanges();
 
                 return View("Confirmation", response);
