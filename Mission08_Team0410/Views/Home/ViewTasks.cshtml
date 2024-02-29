@@ -4,7 +4,7 @@
 @{
 }
 
-
+@model List<AddTask>
 
 <div class="container">
     <div class="row"><h1>Steven Covey's Time Management Matrix</h1></div>
@@ -17,16 +17,22 @@
         <div class="col"><h2>Important</h2></div>
         <div class="col">
             <h3>Quadrant 1</h3>
-            @foreach (var x in Model.Where(m => m.Quadrant == 1))
+            @foreach (var x in Model.Where(x => x.Quadrant == 1))
             {
-                <p>@x.Task</p> <br />
+                <p>@x.Task</p> 
+                <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                <br />
             }
         </div>
         <div class="col">
             <h3>Quadrant 2</h3>
-            @foreach (var x in Model.Where(m => m.Quadrant == 2))
+            @foreach (var x in Model.Where(x => x.Quadrant == 2))
             {
-                <p>@x.Task</p> <br />
+                <p>@x.Task</p>
+                <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                <br />
             }
         </div>
     </div>
@@ -34,16 +40,22 @@
         <div class="col"><h2>Not Important</h2></div>
         <div class="col">
             <h3>Quadrant 3</h3>
-            @foreach (var x in Model.Where(m => m.Quadrant == 3))
+            @foreach (var x in Model.Where(x => x.Quadrant == 3))
             {
-                <p>@x.Task</p> <br />
+                <p>@x.Task</p>
+                <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                <br />
             }
         </div>
         <div class="col">
             <h3>Quadrant 4</h3>
-            @foreach (var x in Model.Where(m => m.Quadrant == 4))
+            @foreach (var x in Model.Where(x => x.Quadrant == 4))
             {
-                <p>@x.Task</p> <br />
+                <p>@x.Task</p>
+                <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                <br />
             }
         </div>
     </div>
