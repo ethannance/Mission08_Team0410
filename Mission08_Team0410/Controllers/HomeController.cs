@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Mission08_Team0410.Models;
+using Mission08_Team0411.Models;
 using System.Diagnostics;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -8,9 +9,9 @@ namespace Mission08_Team0410.Controllers
 {
     public class HomeController : Controller
     {
-        private TasksContext _context;
+        private AddTaskContext _context;
 
-        public HomeController(TasksContext temp) //Constructor
+        public HomeController(AddTaskContext temp) //Constructor
         {
             _context = temp;
         }
