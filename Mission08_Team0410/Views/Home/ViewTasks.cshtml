@@ -19,7 +19,7 @@
             <h3>Quadrant 1</h3>
             @foreach (var x in Model.Where(x => x.Quadrant == 1))
             {
-                <p>@x.Task</p> 
+                <p>@x.TaskName</p> 
                 <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
                 <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
                 <br />
@@ -29,7 +29,7 @@
             <h3>Quadrant 2</h3>
             @foreach (var x in Model.Where(x => x.Quadrant == 2))
             {
-                <p>@x.Task</p>
+                <p>@x.TaskName</p>
                 <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
                 <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
                 <br />
@@ -42,7 +42,7 @@
             <h3>Quadrant 3</h3>
             @foreach (var x in Model.Where(x => x.Quadrant == 3))
             {
-                <p>@x.Task</p>
+                <p>@x.TaskName</p>
                 <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
                 <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
                 <br />
@@ -52,7 +52,7 @@
             <h3>Quadrant 4</h3>
             @foreach (var x in Model.Where(x => x.Quadrant == 4))
             {
-                <p>@x.Task</p>
+                <p>@x.TaskName</p>
                 <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
                 <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
                 <br />
